@@ -6,7 +6,8 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "outDir": "dist",
-    "types": ["@playwright/test"]
+    "types": ["@playwright/test"],
+    "baseUrl": "."
   },
   "include": [
     "tests/**/*.ts",

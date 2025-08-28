@@ -13,20 +13,33 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  /* Run tests in files in parallel */
-  fullyParallel: false,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 5000
+  },
+  
+
+  /* Parallel test execution allowed */
+  fullyParallel: true,
+
+  /* Workers set to 4 (parallel execution on 4 threads) */
+  workers: 4,
+
+  /* Fail build if test.only is present */
   forbidOnly: !!process.env.CI,
+
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter:  [['html', { open: 'on' }]],
+  retries: 2,
+
+  /* Reporter */
+  reporter: [['html', { open: 'on' }]],
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
 
   video: 'on',
+    screenshot: 'only-on-failure',
+
 
   launchOptions: {
     slowMo: 1000

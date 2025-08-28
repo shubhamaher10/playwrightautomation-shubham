@@ -28,8 +28,8 @@ test('Two different users login using browser context', async () => {
   await expect(page2).toHaveURL('https://www.saucedemo.com/inventory.html');
 
   // Screenshots
-  await page1.screenshot({ path: 'login-page1.png' });
-  await page2.screenshot({ path: 'login-page2.png' });
+  //await page1.screenshot({ path: 'login-page1.png' });
+  //await page2.screenshot({ path: 'login-page2.png' });
 
   await browser.close();
 });

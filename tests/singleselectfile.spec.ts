@@ -6,6 +6,7 @@ test('Single File Upload', async () => {
 
   // Open the file upload page
   await page.goto('https://practice.expandtesting.com/upload');
+  await page.pause();
 
   // Upload a single file
   await page.locator('input[name="file"]').setInputFiles("C:/Users/hp/OneDrive/Documents/postman and jmeter interview explaination.docx");

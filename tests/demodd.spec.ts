@@ -26,7 +26,7 @@ test('checkbox', async () => {
   await greenCheckbox.click();
 
   // Assertion: checkbox is checked
-  await expect(greenCheckbox).isChecked();
+  await expect(greenCheckbox).toBeChecked();
 
   // Optional: Wait and observe (for debug/demo)
   await page.waitForTimeout(3000);
